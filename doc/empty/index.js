@@ -24,7 +24,7 @@ var sitename = __filename.split(path.sep).pop().split(".")[0];
 // add i18n
 var i18n = cody.i18n;
 i18n.configure({
-    locales:['zh-cn', 'cn'],
+    locales:['cn', 'cn'],
     directory: __dirname + '/locales',
     defaultLocale: 'cn'
 });
