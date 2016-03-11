@@ -1,0 +1,39 @@
+{
+  "author": {
+    "name": "Howest"
+  },
+  "name": "cody",
+  "description": "Cody CMS",
+  "version": "3.4.2",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/jcoppieters/cody.git"
+  },
+  "main": "./index",
+  "keywords": [
+    "cody",
+    "cms",
+    "howest"
+  ],
+  "dependencies": {
+    "body-parser": "^1.6.7",
+    "ejs": "0.x",
+    "express": "4.x",
+    "express-session": "1.x",
+    "i18n": "^0.5.0",
+    "mime": "1.x",
+    "multer": "^0.1.4",
+    "mysql": "2.x",
+    "nodemailer": "^1.3.0",
+    "vhost": "2.x"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "preinstall_DISABLED": "npm list forever -g || npm install forever -g"
+  },
+  "readme": "Cody CMS\n\nFor documentation see: \n- https://github.com/jcoppieters/cody and/or \n- http://www.cody-cms.org\n\nContact us at johan.coppieters@howest.be\n\nThe Cody team.\n",
+  "readmeFilename": "README.md"
+}

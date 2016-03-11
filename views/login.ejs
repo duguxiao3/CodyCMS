@@ -1,0 +1,74 @@
+<!doctype html>
+
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="<%=page.language%>"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="<%=page.language%>"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="<%=page.language%>"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="<%=page.language%>">
+<!--<![endif]-->
+
+<% include ./cms/header.ejs %>
+
+<!-- TODO translation... where?
+<h2 id="loginfirst">Alvorens naar de gevraagde pagina te gaan, moet U zich eerst aanmelden.</h2>
+<p class="warning">Verkeerde gebruikersnaam of wachtwoord, gelieve nogmaals te proberen.</p>
+<p class="warning">Uw gebruikersnaam is geblokkeerd, gelieve contact op te nemen met de site bouwer.</p>
+<p class="warning">U bent nu afgemeld</p>
+-->
+
+
+<body>
+<section>
+  <header>
+    <% include ./cms/top.ejs %>
+    <% include ./cms/navigation.ejs %>
+  </header>
+
+  <div>
+    <div id="login">
+      <% if (isLoggedIn()) { %>
+         <h2><%=session.login.name%></h2>
+         <a href="login?request=logout"><%= __("Logout")%></a>
+         
+      <% } else { %>  
+        <h2 id="loginfirst"><%= __("Before you can access this requested page you first need to login.")%></h2>
+        <form action="/<%=page.language%>/login" name="logon" id="logon" method="post" class="clearfix">
+          <input type="hidden" name="request" value="login" /> 
+          <fieldset class="clearfix">
+            <div id="logonuser">
+              <label for="username"><%= __("Username")%>:</label>
+              <input name="username" id="username" type="text" />
+              </div>
+            <div>
+              <label for="password"><%= __("Password")%>:</label>
+              <input type="password" id="password" name="password" />
+            </div>
+          </fieldset>	
+            
+          <% if (message == "login-failed") { %>
+            <p class="warning"><%= __("Wrong username of password, please try again.")%> </p>
+          <% } else if (message == "login-locked") { %>
+            <p class="warning"><%= __("Your username is blocked, please take contact with your site builder.")%> </p>
+          <% } %>
+                    
+          <div class="action_buttons">
+            <input type="submit" value="<%= __("Log on")%>" />
+          </div>
+        </form>			
+      <% } %>
+        
+      
+      <% if (message == "logout") { %>
+        <p class="warning">You've been logged out.</p>
+      <% } %>
+    </div>
+    
+  </div>
+</section>
+
+<script type="text/javascript" language="JavaScript">
+  document.forms['logon'].elements['username'].focus();
+</script>
+
+</body>
+</html>

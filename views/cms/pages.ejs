@@ -1,0 +1,142 @@
+<!doctype html>
+
+<html lang="<%=page.language%>">
+
+<% include header.ejs %>
+
+<body id="pages">
+	<script src="<%=cstatic%>/js/lib/jquery-1.9.1<%=min%>.js"></script>
+	<script src="<%=cstatic%>/js/lib/jquery-ui-1.10.1<%=min%>.js"></script>
+	<script src="<%=cstatic%>/js/lib/jquery.validate<%=min%>.js"></script>
+	<script src="<%=cstatic%>/js/lib/localization/messages_<%=page.language%>.js"></script>
+	
+	<script src="<%=cstatic%>/js/lib/jquery.jstree.js"></script>
+	<script src="<%=cstatic%>/js/tinymce/jquery.tinymce.js"></script>
+	
+	 
+	<script src="<%=cstatic%>/js/pages-editor.js"></script>
+	<script src="<%=cstatic%>/js/atom-tree.js"></script>
+	<script>
+	  var gTree;
+		$(document).ready( function() {
+		  gTree = new jAtomTree(1, "<%=shownode%>", gLanguage, "pages", gCody);
+		  gTree.getNode = getPage;
+      gTree.doAdd = addPage;
+      gTree.initNode = initPage;
+		  gTree.init();
+
+
+      // when switching languages, try to keep the same view
+      $("#ltabs > ul > li > a").click( function() {
+        window.location = $(this).attr("href") + "?opennode=" + gTree.getOpenNode() + "&shownode=" + gTree.getCurrentNode();
+        return false;
+      });
+
+      if ("<%=opennode%>" !== "0") {
+        gTree.initNode(<%=opennode%>);
+      }
+
+    });
+  </script>
+
+  <section>
+    <header>
+      <% include top.ejs %>
+      <% include navigation.ejs %>
+    </header>
+    
+		<div>
+		
+			<div id="content_div" style="display: none;">
+				<textarea name="editContent" id="editContent"></textarea>
+				<div id="content_buttons">
+					<button id="doSaveEditor"><%= __("OK")%></button>
+					<button id="doCancelEditor"><%= __("Cancel")%></button>
+				</div>
+			</div>
+	
+ 	    <div id="left_nav">
+				<button id="doAdd"><%= __("Add")%></button>
+				<button id="doRename"><%= __("Rename")%></button>  
+				<button id="doDelete"><%= __("Delete")%></button>
+				<button id="doEdit"><%= __("Edit")%></button>
+
+        <div id="ltabs" class="ui-tabs ui-widget">
+          <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all">
+            <% for (var iL in app.languages) { var L = app.languages[iL]; %>
+              <li class="ui-state-default ui-corner-top <%= (page.language === L.id) ? 'ui-tabs-active ui-state-active' : '' %>" ><a href="/<%=L.id%>/pages" class="ui-tabs-anchor"><%=L.id.toUpperCase()%></a></li>
+            <% } %>
+          </ul>
+
+          <div id="tree" class="ui-corner-bottom">
+            <ul>
+              <li id="id_1" class="open" rel="root"><a href="#"><ins>&nbsp;</ins><%= __("Website")%></a>
+                <%- controller.getTree() %>
+              </li>
+              <li id="id_3" class="closed" rel="root"><a href="#"><ins>&nbsp;</ins><%= __("Pages")%></a>
+                <%- controller.getOrphansTree() %>
+              </li>
+
+              <% if ((login) && (login.level >= 99)) { %>
+               <li id="id_9" class="closed" rel="root"><a href="#"><ins>&nbsp;</ins><%= __("Dashboard")%></a>
+                  <%- controller.getDashboardTree() %>
+               </li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+	    </div>
+
+	    <div id="right_cont">
+        <% if (opennode != 0) { %>
+          <% var currPage = page; %>
+          <% page = app.getPage(currPage.language, opennode); %>
+          <% include pages-ajax.ejs %>
+          <% page = currPage; %>
+        <% } %>
+			</div>
+       
+		</div>
+		
+		<% include footer.ejs %>
+  </section>
+
+  <% include content-type.ejs %>
+
+  <div id="template_selector" title="<%= __('Add new page')%>">
+    <h3><%= __('Show')%></h3>
+    <input type="radio" name="showcontent" id="showcontentY" value="Y" checked><label for="showcontentY"><%= __('Own content')%></label>
+    <input type="radio" name="showcontent" id="showcontentN" value="S"><label for="showcontentN"><%= __('Content of first subitem')%></label>
+    <hr>
+
+    <h3><%= __('Add a web page')%></h3>
+    <% for (var iT in app.templates) { var T = app.templates[iT]; %>
+      <% if (T.system === "N") { %>
+        <div>
+          <a class="makeChoice" href="#" rel="<%= T.id %>"><img src="<%=cstatic%>/extentions/html.png"></a>
+          <article>
+            <a class="makeChoice" href="#" rel="<%= T.id %>"><%= T.name %> page  »</a>
+            <span><%= T.description %></span>
+          </article>
+        </div>
+      <% } %>
+    <% } %>
+
+    <% if (login.level > 50) { %>
+      <h3>Add a system page</h3>
+      <% for (var iT in app.templates) { var T = app.templates[iT]; %>
+        <% if (T.system === "Y") { %>
+          <div>
+            <a class="makeChoice" href="#" rel="<%= T.id %>"><img src="<%=cstatic%>/extentions/frm.gif"></a>
+            <article>
+              <a class="makeChoice" href="#" rel="<%= T.id %>"><%= T.name %> <%= __('page')%>  »</a>
+              <span><%= T.description %></span>
+            </article>
+          </div>
+        <% } %>
+      <% } %>
+    <% } %>
+  </div>
+
+ </body>
+</html>

@@ -1,0 +1,77 @@
+
+- model/User.js aanpassen om Model.js te gebruiken.
+  tevens ook nog bug in usercontroller na "save", iets met redirect mis
+
+- Diverse models die aangemaakt worden in een Controller (bvb. PhotoController)
+  naar een apart bestand verhuizen (bvb: models/Photo.js)
+
+- daily backups !! [ done -> dropbox voor .sql en data.tgz / github voor code ]
+
+- in loginController std functionaliteit om nieuw password op te sturen
+
+- github [ done ]
+  - readme
+  - contrib
+  - licence [ done ]
+
+- stop/start/restart Cody
+  moet degelijk script worden om in /etc/init.d te zetten
+  voorbeelden genoeg aldaar te vinden.
+
+
+- redirect / to /cn or /en [ done ]
+- delete content from page fails ... ?? [ fixed on 23/06/2013, a > where it should have been a >= ]
+- new folder in "Images" -> "Choose file" ?? [ fixed 21/06/2013 ]
+
+- sending mails from javascript [ done ]
+
+- "Images" (met id = 1) was weg bij Stoerhuus ??  Delete van toplevel?
+ [done 2013/11/02 - hasAtomChildren had fout in Application ]
+
+- templates
+  - add "note" om bij "add content" bij elke template een beetje uitleg te geven over de template
+    ook in add-content kiezer deze tekst tonen. [ done 24/06/2013 ]
+  - implement "allowedTemplates" (page controller + template editing) and MaxNumber
+  - duplicate template [ done 22/06 ]
+  - lijst van automatisch toegevoegde benoemde content items (negative atoms met naam) [ done 22/06/2013 ]
+    opgelet: PageController nakijken dat naam overgenomen wordt van gepredefinieerde atoms. [ done 22/06/2013 ]
+  - gekoppelde form -> data aan pagina hangen / kunnen afbeelden
+- passwords niet meer als plain text stockeren [ done ]
+
+
+- maken dat ook /cn als /cn/ aanvaard wordt [ done ]
+  evenals /  [ done ]
+
+
+
+- unit testing
+  - bvb: controller.getParam, Id, Num, Int: allerlei waarden in params steken en er terug uithalen
+
+
+Hosting on cody-web:
+- de server parameters (uit cody.websites) editeerbaar maken in de backoffice
+  wel de naam read-only houden.
+- een uitbreiding te maken op de website van cody
+  inclusief registratie e.d.
+- daarna: uploaden van css en logo in backoffice.
+  ook header en footer image ?
+- virtual host selectie -> app [ done ]
+
+
+Yanic: [ done door Johan: 15/09/2013 ]
+- definitie van meta data object, inclusief editing features (lengte, radio/checkbox, popup, etc)
+  controller voor in back office + template + bewaren in SQL met zeker id + name.
+- gegeven de id van zo'n meta object een fieldset genereren (geen form)
+  deze kan dan in een webpagina getoond worden
+  of gebruikt worden om meta data van een pagina te editeren.
+- bij het krijgen van een meta data id + (bestaande - or lege) data + param's object
+  -> json string of object teruggeven dat kan bewaard worden
+    of fouten teruggeven indien data niet voldoet aan de meta definitie.
+
+
+- Projects todo
+  - Grader / Grades (Howest)
+  - Dr / Agenda Site omzetten van Java -> Cody
+  - BOK [ ±done: Dieter ]
+  - Verlanglijstje / mobile version
+  - Empty sites uitbreiden met templates van Jill
