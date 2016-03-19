@@ -6,7 +6,7 @@
 	"Login": "登录",
 	"Logout": "退出",
 	"Dashboard": "控制面板",
-	"Help": "登录",
+	"Help": "帮助",
 	"Account": "个人中心",
 	"Sign out": "退出",
 	"Before you can access this requested page you first need to login.": "该页面需要登陆才能访问",
@@ -111,5 +111,10 @@
 	"Default child": "默认子文件",
 	"No children": "无子文件",
 	"Allowed children": "允许子文件",
-	"Duplicate": "重复"
+	"Duplicate": "重复",
+	"Subject": "主题",
+	"Test mail": "测试 mail",
+	"Test name": "测试 name",
+	"Send Mails": "发送邮件",
+	"login-failed": "登录-失败"
 }

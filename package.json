@@ -1,6 +1,6 @@
 {
   "author": {
-    "name": "Howest"
+    "name": "duguxiao3"
   },
   "name": "cody",
   "description": "Cody CMS",
@@ -8,7 +8,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/jcoppieters/cody.git"
+    "url": "https://github.com/duguxiao3/CodyCMS.git"
   },
   "main": "./index",
   "keywords": [
