@@ -92,8 +92,8 @@ header > nav li:first-child { border-left: none }
 
 header > #lanNav { float: right; padding: 20px 4px 0 0 }
 header > #lanNav a { color: red; font-size: 12px }
-header > #lanNav span.id { display: inline; text-transform: uppercase }
-header > #lanNav span.name { display: none }
+header > #lanNav span.id { display: none; text-transform: uppercase }
+header > #lanNav span.name { display: inline }
 header > #contactData { float: right;clear: both; margin-top: 20px;margin-right: 15px; }
 
 /* ===== content ============================================================= */
