@@ -6,7 +6,7 @@
 	"Login": "登录",
 	"Logout": "退出",
 	"Dashboard": "控制面板",
-	"Help": "帮助",
+  	"Help Center": "帮助中心",
 	"Account": "个人中心",
 	"Sign out": "退出",
 	"Before you can access this requested page you first need to login.": "该页面需要登陆才能访问",
