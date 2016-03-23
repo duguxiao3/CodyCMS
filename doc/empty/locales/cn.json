@@ -101,7 +101,7 @@
 	"Bad logins": "错误登陆次数",
 	"Max allowed": "最大次数",
 	"Allows Mail": "启用邮件",
-	"Leave empty if you don't want to change your password.": "不想修改密码可以留空",
+	"Leave empty if you don't want to change your password.": "不想修改密码可以为空",
 	"New": "新建",
 	"System": "系统",
 	"Controller": "控制器",

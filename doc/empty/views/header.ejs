@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <link rel="stylesheet" href="<%=static%>/css/front.css" media="screen">
-    <link rel="stylesheet" href="<%=static%>/css/user.css" media="screen">
+    <link rel="stylesheet" href="<%=cstatic%>/css/ui-lightness/jquery-ui-1.10.1<%=min%>.css" media="screen">
+    <link rel="stylesheet" href="<%=cstatic%>/css/bootstrap/css/bootstrap<%=min%>.css" media="screen">
 
     <link rel="shortcut icon" href="<%=static%>/favicon.ico" type="image/x-icon">
     <link rel="icon" href="<%=static%>/favicon.ico" type="image/x-icon">
@@ -22,21 +23,21 @@
 
     <script src="<%=static%>/js/script.js"></script>
 
-    <% var analytics = page.root.getContent("Google Analytics code"); %>
-    <% if (typeof analytics !== "undefined") { %>
-        <script type="text/javascript">
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', '<%=analytics.data%>']); // UA-xxxxxxx-x
-            _gaq.push(['_trackPageview']);
+    <!-- 去掉使用ga来收集用户信息-->
+    <!--<% var analytics = page.root.getContent("Google Analytics code"); %>-->
+    <!--<% if (typeof analytics !== "undefined") { %>-->
+        <!--<script type="text/javascript">-->
+            <!--var _gaq = _gaq || [];-->
+            <!--_gaq.push(['_setAccount', '<%=analytics.data%>']); // UA-xxxxxxx-x-->
+            <!--_gaq.push(['_trackPageview']);-->
 
-            (function() {
-              var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-              ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-              var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-
-        </script>
-    <% } %>
+            <!--(function() {-->
+                <!--var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;-->
+                <!--ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';-->
+                <!--var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);-->
+            <!--})();-->
+        <!--</script>-->
+    <!--<% } %>-->
 
 <!--[if lt IE 9]>
 	<script src="<%=cstatic%>/js/lib/html5shiv.js"></script>
