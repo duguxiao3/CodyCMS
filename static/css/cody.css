@@ -106,14 +106,6 @@ header { width: 100% }
   
   header > section { display: block; float: right; margin: 30px 4px 10px 10px; vertical-align: top; font-size: 14px; font-weight: bold }
   header > section > a { margin-left: 16px; }
- 
-	header > nav { clear: both; background-color: #333334; height: 24px; padding: 0px; margin: 0 2px 0 2px; }
-	  header > nav ul {}
-	  header > nav li { display: inline-block; margin: 6px 12px 4px 8px }
-	  header > nav a { color: white; font-size: 16px; font-weight: bold }
-	  header > nav a:hover { color: white; text-decoration: underline; }
-	  header > nav a:visited { color: white; }
-	  header > nav a.active { color: #f3ad25 }
 
 /* footer
 ------------------------------------------------------------------*/
