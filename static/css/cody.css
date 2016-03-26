@@ -323,18 +323,6 @@ label.kind { display: inline-block; width: 13px; height: 16px; text-align: cente
       #templates fieldset#right article input { margin: 6px 12px 0 6px; width: 270px }
       #templates fieldset#right article img { margin-top: 2px }
 
-/* login - NOT OK
-------------------------------------------------------------------*/
-
-nav h1#logintitle { color: white }
-#login h1 { width: 505px; margin: 0; padding: 170px 295px 10px 0; color: #fff; text-align: right; font-size: 24px; }
-  #logon { width: 300px; padding: 7px 295px 30px 50px; text-align: right; }
-    #logon fieldset { float: none;  width: 255px; }
-      #logon fieldset div { padding-bottom: 5px; }
-    #logon .action_buttons { margin-left: 120px; text-align: left }
-      #logon .action_buttons input { width: 69px; height: 24px; border: 0; color: #fff; font-size: 13px; font-weight: bold; font-family: Verdana, Arial, sans-serif; cursor: pointer; }
-
-
 
 /* Data from forms
 ------------------------------------------------------------------*/
