@@ -18,39 +18,38 @@
 
 
 <body>
-    <section>
-        <header>
-            <% include ./cms/top.ejs %>
-            <% include ./cms/navigation.ejs %>
-        </header>
+    <header>
+        <% include ./cms/top.ejs %>
+        <% include ./cms/navigation.ejs %>
+    </header>
 
-        <!-- container -->
-        <div class="container">
-            <div class="row">
-                <!-- Article main content -->
-                <article class="col-xs-12 maincontent">
-                    <% if (isLoggedIn()) { %>
-                        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <h3 class="thin text-center"><%= __("Now user:")%><%=session.login.name%></h3>
+    <!-- container -->
+    <div class="container">
+        <div class="row">
+            <!-- Article main content -->
+            <article class="col-xs-12 maincontent">
+                <% if (isLoggedIn()) { %>
+                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3 class="thin text-center"><%= __("Now user:")%><%=session.login.name%></h3>
+                                <hr>
+                                <form>
                                     <hr>
-                                    <form>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col-lg-8">
-                                                <b><a href="/<%=page.language%>/users?request=edit&id=<%=login.id%>"><%= __("Account")%></a></b>
-                                            </div>
-                                            <div class="col-lg-4 text-right">
-                                                <button class="btn btn-action" onclick="javascript:window.location.href='login?request=logout';"><%= __("Logout")%></button>
-                                            </div>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <b><a href="/<%=page.language%>/users?request=edit&id=<%=login.id%>"><%= __("Account")%></a></b>
                                         </div>
-                                    </form>
-                                </div>
+                                        <div class="col-lg-4 text-right">
+                                            <button class="btn btn-action" onclick="javascript:window.location.href='login?request=logout';"><%= __("Logout")%></button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
-
                         </div>
-                    <% } else { %>
+                    </div>
+                <% } else { %>
+                    <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                         <div class="panel panel-default">
                             <div class="panel-body">
                                 <h3 class="thin text-center" id="loginfirst"><%= __("Before you can access this requested page you first need to login.")%></h3>
@@ -84,15 +83,15 @@
                                 </form>
                             </div>
                         </div>
-                    <% } %>
+                    </div>
+                <% } %>
 
-                    <% if (message == "logout") { %>
-                        <p class="warning">You've been logged out.</p>
-                    <% } %>
-                </article>
-            </div>
+                <% if (message == "logout") { %>
+                    <p class="warning">You've been logged out.</p>
+                <% } %>
+            </article>
         </div>
-    </section>
+    </div>
 
     <script type="text/javascript" language="JavaScript">
         document.forms['logon'].elements['username'].focus();
