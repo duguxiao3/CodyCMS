@@ -19,51 +19,79 @@
 
 <body>
     <section>
-      <header>
-        <% include ./cms/top.ejs %>
-        <% include ./cms/navigation.ejs %>
-      </header>
+        <header>
+            <% include ./cms/top.ejs %>
+            <% include ./cms/navigation.ejs %>
+        </header>
 
-      <div>
-        <div id="login">
-          <% if (isLoggedIn()) { %>
-             <h2><%=session.login.name%></h2>
-             <a href="login?request=logout"><%= __("Logout")%></a>
+        <!-- container -->
+        <div class="container">
+            <div class="row">
+                <!-- Article main content -->
+                <article class="col-xs-12 maincontent">
+                    <% if (isLoggedIn()) { %>
+                        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <h3 class="thin text-center"><%= __("Now user:")%><%=session.login.name%></h3>
+                                    <hr>
+                                    <form>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-lg-8">
+                                                <b><a href="/<%=page.language%>/users?request=edit&id=<%=login.id%>"><%= __("Account")%></a></b>
+                                            </div>
+                                            <div class="col-lg-4 text-right">
+                                                <button class="btn btn-action" onclick="javascript:window.location.href='login?request=logout';"><%= __("Logout")%></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
 
-          <% } else { %>
-            <h2 id="loginfirst"><%= __("Before you can access this requested page you first need to login.")%></h2>
-            <form action="/<%=page.language%>/login" name="logon" id="logon" method="post" class="clearfix">
-              <input type="hidden" name="request" value="login" />
-              <fieldset class="clearfix">
-                <div id="logonuser">
-                  <label for="username"><%= __("Username")%>:</label>
-                  <input name="username" id="username" type="text" />
-                  </div>
-                <div>
-                  <label for="password"><%= __("Password")%>:</label>
-                  <input type="password" id="password" name="password" />
-                </div>
-              </fieldset>
+                        </div>
+                    <% } else { %>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <h3 class="thin text-center" id="loginfirst"><%= __("Before you can access this requested page you first need to login.")%></h3>
+                                <hr>
+                                <form action="/<%=page.language%>/login" name="logon" id="logon" method="post" class="clearfix">
+                                    <input type="hidden" name="request" value="login" />
+                                    <div class="top-margin" id="logonuser">
+                                        <label for="username"><%= __("Username")%>: <span class="text-danger">*</span></label>
+                                        <input name="username" id="username" type="text" class="form-control" />
+                                    </div>
+                                    <div class="top-margin">
+                                        <label for="password"><%= __("Password")%>: <span class="text-danger">*</span></label>
+                                        <input type="password" class="form-control" id="password" name="password" />
+                                    </div>
 
-              <% if (message == "login-failed") { %>
-                <p class="warning"><%= __("Wrong username of password, please try again.")%> </p>
-              <% } else if (message == "login-locked") { %>
-                <p class="warning"><%= __("Your username is blocked, please take contact with your site builder.")%> </p>
-              <% } %>
+                                    <% if (message == "login-failed") { %>
+                                        <p class="warning"><%= __("Wrong username of password, please try again.")%> </p>
+                                    <% } else if (message == "login-locked") { %>
+                                        <p class="warning"><%= __("Your username is blocked, please take contact with your site builder.")%> </p>
+                                    <% } %>
 
-              <div class="action_buttons">
-                <input type="submit" value="<%= __("Log on")%>" />
-              </div>
-            </form>
-          <% } %>
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-lg-8">
+                                            <b><a href=""><%= __("Forgot password")%>?</a></b>
+                                        </div>
+                                        <div class="col-lg-4 text-right">
+                                            <button class="btn btn-action" type="submit"><%= __("Log on")%></button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
 
-
-          <% if (message == "logout") { %>
-            <p class="warning">You've been logged out.</p>
-          <% } %>
+                    <% if (message == "logout") { %>
+                        <p class="warning">You've been logged out.</p>
+                    <% } %>
+                </article>
+            </div>
         </div>
-
-      </div>
     </section>
 
     <script type="text/javascript" language="JavaScript">
