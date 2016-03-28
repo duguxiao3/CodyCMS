@@ -168,7 +168,6 @@ p.copyright {
 }
 
 .transparent {
-    background: rgba(255, 0, 0, 0.3) !important;/* IE无效，FF有效 */
     filter:alpha(opacity=50);
     -moz-opacity:0.5;
     -khtml-opacity: 0.5;
