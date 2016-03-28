@@ -27,12 +27,12 @@
     <div class="container">
         <div class="row">
             <!-- Article main content -->
-            <article class="col-xs-12 transparent">
+            <article class="col-xs-12">
                 <% if (isLoggedIn()) { %>
                     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h3 class="text-center btn btn-default btn-lg" id="loginfirst"><%= __("Now user:")%><%=session.login.name%></h3>
+                                <h3 class="text-center"><%= __("Now user:")%><%=session.login.name%></h3>
                                 <hr>
                                 <form>
                                     <hr>
@@ -52,7 +52,7 @@
                     <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
                         <div class="panel panel-default">
                             <div class="panel-body">
-                                <h3 class="text-center btn btn-default btn-lg" id="loginfirst"><%= __("Before you can access this requested page you first need to login.")%></h3>
+                                <h3 class="text-center" id="loginfirst"><%= __("Before you can access this requested page you first need to login.")%></h3>
                                 <hr>
                                 <form action="/<%=page.language%>/login" name="logon" id="logon" method="post" class="clearfix">
                                     <input type="hidden" name="request" value="login" />
