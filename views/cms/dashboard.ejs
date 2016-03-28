@@ -4,38 +4,41 @@
 
 <% include header.ejs %>
 
-<body id="dashboard">
-  <section>
-	  <header>
-	    <% include top.ejs %>
-	  </header>
-
-  <% if (login) { %>
-    <nav>
-      <% for (var i in page.children) {  
-	      var p = page.children[i]; 
-	      if (p.isVisible()) { %>
-	        <section>
-	          <h3><%= p.title %></h3>
-	          <ul>
-	            <% for (var j in p.children) {
-	              var sp = p.children[j];
-	              if (sp.isVisible()) { %>
-	                <li><a href="/<%= sp.url %>"><%= sp.title %></a></li>
-	              <% } %>
-	            <% } %>
-	          </ul>
-	        </section>
-	      <% } %>
-      <% } %>
-    </nav>
-    
-  <% } else { %>
-	  <h1>Login first</h1>
-  <% } %>	
- 
-  <% include footer.ejs %>
- </section>
-</body>
+    <body id="dashboard">
+          <section>
+              <header>
+                <% include top.ejs %>
+              </header>
+              <div class="intro-header">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-lg-12">
+                              <div class="intro-message">
+                                  <h3><%= __("Dashboard")%></h3>
+                                  <hr class="intro-divider">
+                                  <ul class="list-inline intro-social-buttons">
+                                      <% if (login) { %>
+                                          <% for (var i in page.children) {
+                                              var p = page.children[i];
+                                              if (p.isVisible()) {
+                                                  if(p.children.length > 0) {%>
+                                                      <li>
+                                                          <a href="/<%= p.children[0].url %>" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name"><%= p.title %></span></a>
+                                                      </li>
+                                                  <% } %>
+                                              <% } %>
+                                          <% } %>
+                                      <% } else { %>
+                                          <h1>Login first</h1>
+                                      <% } %>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          <% include footer.ejs %>
+         </section>
+    </body>
 </html>
     
