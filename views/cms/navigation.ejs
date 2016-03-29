@@ -1,6 +1,6 @@
 <nav>
     <% if (isLoggedIn()) { %>
-        <ul>
+        <ul class="list-inline intro-social-buttons">
             <% for (var i in page.parent.children) {
                 var p = page.parent.children[i];
                 if (p.isVisible()) { %>
@@ -14,7 +14,7 @@
     <p class="notification <%= status %>"><%= __(message) %></p>
     <% if (status === "success") { %>
         <script>
-        $(document).ready( function () { $(".notification").delay(6000).fadeOut(1000); } );
+            $(document).ready( function () { $(".notification").delay(6000).fadeOut(1000); } );
         </script>
     <% } %>
 <% } %>
