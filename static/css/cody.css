@@ -94,15 +94,6 @@ body > section { width: 1000px; margin: 0 auto; }
 body > section > div { clear: both; margin: 10px 2px 0 2px  }
 
 
-/* Dashboard navigation
-------------------------------------------------------------------*/
-header > span#breadcrumb { display: inline-block; font-size: 14px; font-weight: bold; margin: 61px 10px 9px 45%;
-    vertical-align: top; color: #333334 }
-header > span#breadcrumb a { text-decoration: none; color: #4d94cc }
-header > span#breadcrumb a:visited { text-decoration: none }
-header > span#breadcrumb a:hover { text-decoration: underline }
-
-
 /* tree edit layout
 ------------------------------------------------------------------*/
 

@@ -167,7 +167,7 @@
     <% if (typeof templates != "undefined") { %>
     <form action="./templates" method="post" id="search">
  	   	<input type="hidden" name="request" id="request" value="list" />
-			<button id="doNew"><%= __("New")%></button>
+			<button type="button"  class="btn btn-default" id="doNew"><%= __("New")%></button>
 
 			<table id="records">
 			   <tr>

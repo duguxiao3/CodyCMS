@@ -13,6 +13,11 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
+                <% if (isLoggedIn()) { %>
+                    <li>
+						<a href="/<%=page.language%>/dashboard"><%= __("Dashboard")%></a>
+                    </li>
+                <% } %>
                 <li>
                     <a href="<%=cstatic%>/manual.pdf"><%= __("Help Center")%></a>
                 </li>
@@ -30,6 +35,3 @@
     </div>
     <!-- /.container -->
 </nav>
-<% if (page.parent && isLoggedIn()) { %>
-    <span id="breadcrumb"><a href="/<%=page.language%>/dashboard"><%= __("Dashboard")%></a> » <%=page.parent.title%></span>
-<% } %>
