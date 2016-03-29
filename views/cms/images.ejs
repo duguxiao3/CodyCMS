@@ -14,8 +14,8 @@
 <script src="<%=cstatic%>/js/atom-tree.js"></script>
 <script>
 	$(document).ready( function() {
-	  var gTree = new jAtomTree(1, "<%=shownode%>", gLanguage, "images", gCody);
-	  gTree.init();
+		var gTree = new jAtomTree(1, "<%=shownode%>", gLanguage, "images", gCody);
+		gTree.init();
 	});
 </script>
 
@@ -29,24 +29,24 @@
     <div>
 		
  	    <div id="left_nav">
-	      <button id="doAddFolder"><%= __("Add Folder")%> </button>
-	      <button id="doAddImage"><%= __("Add Image")%> </button><br>
-	      <button id="doRename" ><%= __("Rename")%></button>
-	      <button id="doDelete" ><%= __("Delete")%></button>
-	      <button id="doEdit" ><%= __("Edit")%></button>
+			<div class="btn-group" role="group" aria-label="...">
+				<button id="doAddFolder"><%= __("Add Folder")%> </button>
+				<button id="doAddImage"><%= __("Add Image")%> </button>
+				<button id="doRename" ><%= __("Rename")%></button>
+				<button id="doDelete" ><%= __("Delete")%></button>
+				<button id="doEdit" ><%= __("Edit")%></button>
+			</div>
 
         <div id="tree">
-          <ul>
-            <li id="id_<%= controller.getRoot() %>" class="open" rel="root"><a href="#"><ins>&nbsp;</ins><%= __("Images")%></a>
-              <%- controller.getTree() %>
-            </li>
+			<ul>
+				<li id="id_<%= controller.getRoot() %>" class="open" rel="root"><a href="#"><ins>&nbsp;</ins><%= __("Images")%></a>
+					<%- controller.getTree() %>
+				</li>
 
-            <li id="id_4" class="open" rel="root"><a href="#"><ins>&nbsp;</ins><%= __("Layout")%></a>
-              <%- controller.getTree(4) %>
-            </li>
-
-            </li>
-          </ul>
+				<li id="id_4" class="open" rel="root"><a href="#"><ins>&nbsp;</ins><%= __("Layout")%></a>
+					<%- controller.getTree(4) %>
+				</li>
+			</ul>
 
         </div>
 			

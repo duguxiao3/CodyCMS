@@ -96,7 +96,7 @@ body > section > div { clear: both; margin: 10px 2px 0 2px  }
 
 /* Dashboard navigation
 ------------------------------------------------------------------*/
-header > span#breadcrumb { display: inline-block; font-size: 14px; font-weight: bold; margin: 63px 10px 15px 45%;
+header > span#breadcrumb { display: inline-block; font-size: 14px; font-weight: bold; margin: 61px 10px 9px 45%;
     vertical-align: top; color: #333334 }
 header > span#breadcrumb a { text-decoration: none; color: #4d94cc }
 header > span#breadcrumb a:visited { text-decoration: none }
@@ -112,7 +112,7 @@ header > span#breadcrumb a:hover { text-decoration: underline }
 
 /* tree manager
 ------------------------------------------------------------------*/
-#tree { width: 322px; background: white; border: solid 1px #CFCFCF; margin: 0px 0 0 2px;
+#tree { background: white; border: solid 1px #CFCFCF; margin: 0px;
     box-shadow: 2px 2px 5px lightgrey; -moz-box-shadow: 2px 2px 5px lightgrey; -webkit-box-shadow: 2px 2px 5px lightgrey  }
 body#images #tree, body#files #tree, body#forms #tree { margin-top: 10px }
 
@@ -122,7 +122,7 @@ body#images #tree, body#files #tree, body#forms #tree { margin-top: 10px }
 #tree.jstree li.invisible a  { color: #999; }
 #tree.jstree a.jstree-clicked { background: #fcc14e }
 #tree.jstree .jstree-hovered { background: #fee6b8; border: solid 1px #fee6b8 }
-#tree.jstree a { height: 18px; width: 90%; padding: 4px 2px 0 1px; border: solid 1px white }
+#tree.jstree a { height: 100%; width: 90%; border: solid 1px white }
 #tree.jstree a.jstree-hovered { padding: 4px 2px 0 1px }
 #tree.jstree li[rel=root] > a { font-size: 13px; color: #4d94cc; font-weight: bold }
 #tree.jstree li[rel=root] > a.jstree-clicked { border: solid 1px #fcc14e }
@@ -332,3 +332,23 @@ body#forms #content_data #tabs { margin-top: 16px }
 #data form fieldset strong { color: black }
 #data form fieldset div#info { margin-top: -10px }
 #data form fieldset div#info div { padding-top: 6px }
+
+/**********************JQuery-ui*********************/
+.ui-corner-all, 
+.ui-corner-bottom, 
+.ui-corner-left, 
+.ui-corner-bl { 
+  -moz-border-radius-bottomleft: 4px; 
+  -webkit-border-bottom-left-radius: 4px; 
+  -khtml-border-bottom-left-radius: 4px; 
+  border-bottom-left-radius: 4px; 
+}
+.ui-corner-all, 
+.ui-corner-bottom, 
+.ui-corner-right, 
+.ui-corner-br { 
+  -moz-border-radius-bottomright: 4px; 
+  -webkit-border-bottom-right-radius: 4px; 
+  -khtml-border-bottom-right-radius: 4px; 
+  border-bottom-right-radius: 4px; 
+}

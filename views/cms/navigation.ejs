@@ -1,6 +1,6 @@
-<nav>
+<nav class="navbar navbar-inverse">
     <% if (isLoggedIn()) { %>
-        <ul class="list-inline intro-social-buttons">
+        <ul class="nav navbar-nav">
             <% for (var i in page.parent.children) {
                 var p = page.parent.children[i];
                 if (p.isVisible()) { %>

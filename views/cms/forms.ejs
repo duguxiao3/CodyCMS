@@ -57,10 +57,12 @@
   <div>
 
     <div id="left_nav">
-      <button id="doAddFolder"><%= __("Add Form")%></button>
-      <button id="doAddImage"><%= __("Add Item")%></button><br>
-      <button id="doDelete" ><%= __("Delete")%></button>
-      <button id="doEdit" ><%= __("Edit")%></button>
+		<div class="btn-group" role="group" aria-label="...">
+			<button id="doAddFolder"><%= __("Add Form")%></button>
+			<button id="doAddImage"><%= __("Add Item")%></button>
+			<button id="doDelete" ><%= __("Delete")%></button>
+			<button id="doEdit" ><%= __("Edit")%></button>
+		</div>
 
       <div id="tree">
         <ul><li id="id_<%= controller.getRoot() %>" class="open" rel="root"><a href="#"><ins>&nbsp;</ins>Forms</a>
