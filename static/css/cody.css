@@ -167,7 +167,7 @@ label.kind { display: inline-block; width: 13px; height: 16px; text-align: cente
 #content_data section > div { margin: 10px 5px 5px 8px; }
 #content_data section button { margin-top: -1px; height: 25px }
 #content_data > div { margin: 10px 5px 5px 8px; border: 1px solid #cfcfcf; }
-#content_data input { font-size: 13px; height: 19px; line-height: 22px }
+#content_data input { font-size: 13px; line-height: 22px }
 #content_data label { font-size: 13px; height: 19px; line-height: 22px; margin-bottom: 4px; color: #4d94cc; font-weight: bolder;  }
 #content_data #preview { max-width: 440px; box-shadow: 4px 4px 7px lightgrey; border: solid 1px darkgrey;
     -moz-box-shadow: 4px 4px 7px lightgrey; -webkit-box-shadow: 4px 4px 7px lightgrey; }
@@ -194,8 +194,7 @@ body#forms #content_data #tabs { margin-top: 16px }
 #content_data #content h4 { margin: 10px 0 10px 3px; color: #4d94cc }
 #content_data #content article > img { display: inline-block; box-shadow: 1px 1px 5px grey; margin: 16px 0 0 8px; vertical-align: top }
 #content_data #content article > div.actions { display: inline-block; vertical-align:top; margin-top: 14px; float: right }
-#content_data #content article > div.actions > span { display: inline-block; margin-left: 5px;
-    background-image: url(ui-lightness/images/ui-icons_ef8c08_256x240.png) }
+#content_data #content article > div.actions > span { display: inline-block; margin-left: 5px; font-size: 14px; line-height: 1.3;}
 
 
 
