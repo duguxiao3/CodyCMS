@@ -241,6 +241,8 @@ body#forms #content_data #tabs { margin-top: 16px }
 #content_data #action_buttons { margin: 15px 17px 5px 15px }
 #content_data #action_buttons span#last_modif { margin:10px 2px 0 0 ; float: right; display: inline-block }
 
+#content_data #onepage #tabs #options #fileToUpload { margin-top: 6px }
+
 
 /* back office tables + edit forms
 ------------------------------------------------------------------*/
