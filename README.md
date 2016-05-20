@@ -29,12 +29,14 @@ By following these steps you will be running your own CMS system in no time. If 
 	$ cd node_modules
   ```
 * 复制package.json到该目录下
+
   ```bash
 	$ npm install
   ```
 * clone代码到该目录下
+
   ```bash
-	$ npm git clone git@github.com:duguxiao3/CodyCMS.git cody
+	$ git clone git@github.com:duguxiao3/CodyCMS.git cody
   ```
 
 * 使用如下向导创建一个新的Web工程
