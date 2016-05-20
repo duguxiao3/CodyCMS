@@ -1,12 +1,7 @@
 # Cody CMS
 
-A Javascript Content Management System running on Node.js
-
-We finally took upon the task, we are happy to announce the transition to Express 4 is now done! (dixit Slawo)
-
-See http://www.cody-cms.org for more info and examples on http://github.com/jcoppieters/cody-samples
-
-You can now use npm to install Cody thanks to Jonas.
+基于开源Cody的一个CMS系统。
+目标：结合bootstrap做成一个生成移动端页面的CMS系统。
 
 ## Features
 
@@ -16,24 +11,33 @@ You can now use npm to install Cody thanks to Jonas.
 * Works seamless with your existing node.js code.
 
 
-## Getting Started
+## 开始cody
 
 By following these steps you will be running your own CMS system in no time. If any of the steps do not work for you, please report this as an issue on this github repository and we will look into it as soon as possible!
 
-* Install [nodejs](http://nodejs.org/download/) and [mysql](http://dev.mysql.com/downloads/mysql/)
-* Create a new directory for your cms and navigate to it (in unix):
+* 安装:nodejs(http://nodejs.org/download/) 和 mysql(http://dev.mysql.com/downloads/mysql/)
+* 为你的CMS创建一个目录并且cd到创建的目录下 (in unix):
 
   ```bash
 	$ mkdir codydev
 	$ cd codydev
   ```
-* Install cody and its dependencies
-  
-  ```bash
-	$ npm install cody
-  ``` 
+* 创建cody和他的依赖模块包
 
-* Set up a new web site using the guided scaffolding
+  ```bash
+	$ mkdir node_modules
+	$ cd node_modules
+  ```
+* 复制package.json到该目录下
+  ```bash
+	$ npm install
+  ```
+* clone代码到该目录下
+  ```bash
+	$ npm git clone git@github.com:duguxiao3/CodyCMS.git cody
+  ```
+
+* 使用如下向导创建一个新的Web工程
 
   ```bash
     $ node ./node_modules/cody/bin/create_site
